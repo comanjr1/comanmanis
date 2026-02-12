@@ -4,6 +4,7 @@
   "description": "Konfigurasi email massal yang andal dengan fitur anti-spam lengkap / Reliable mass email sending configuration with comprehensive anti-spam features",
   "main": "services/EmailService.js",
   "scripts": {
+    "verify": "node verify-config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
