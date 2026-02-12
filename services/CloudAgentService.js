@@ -12,7 +12,6 @@ const { config, validateConfig } = require('../config/cloudagent.config');
 class CloudAgentService {
   constructor(customConfig = null) {
     this.config = customConfig || config;
-    this.requestQueue = [];
     this.activeRequests = 0;
     this.requestTimestamps = [];
     
@@ -273,7 +272,6 @@ class CloudAgentService {
       provider: this.config.provider,
       activeRequests: this.activeRequests,
       requestsInLastMinute: this.requestTimestamps.length,
-      queueLength: this.requestQueue.length,
     };
   }
 }

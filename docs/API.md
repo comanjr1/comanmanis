@@ -157,7 +157,6 @@ Get current service statistics for monitoring.
 - `provider` (string): Active provider name
 - `activeRequests` (number): Currently executing requests
 - `requestsInLastMinute` (number): Requests made in last 60 seconds
-- `queueLength` (number): Queued requests waiting to execute
 
 **Example:**
 ```javascript
@@ -166,7 +165,6 @@ const stats = service.getStats();
 console.log(`Provider: ${stats.provider}`);
 console.log(`Active: ${stats.activeRequests}`);
 console.log(`Last minute: ${stats.requestsInLastMinute}`);
-console.log(`Queued: ${stats.queueLength}`);
 ```
 
 ---

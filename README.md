@@ -151,7 +151,6 @@ const result = await agentService.delegateTaskStream(
 const stats = agentService.getStats();
 console.log('Active requests:', stats.activeRequests);
 console.log('Requests in last minute:', stats.requestsInLastMinute);
-console.log('Queue length:', stats.queueLength);
 ```
 
 ## Supported Providers
@@ -305,7 +304,6 @@ Get service statistics.
 - `provider` (string): Active provider
 - `activeRequests` (number): Currently active requests
 - `requestsInLastMinute` (number): Requests in the last 60 seconds
-- `queueLength` (number): Queued requests
 
 ## Architecture
 
