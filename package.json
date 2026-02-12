@@ -5,7 +5,14 @@
   "main": "services/CloudAgentService.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "example": "node examples/usage.js"
+    "verify": "node verify-config.js",
+    "example": "node examples/usage.js",
+    "example:simple": "node examples/simple-delegation.js",
+    "example:batch": "node examples/batch-delegation.js",
+    "example:openai": "node examples/provider-examples/openai-example.js",
+    "example:anthropic": "node examples/provider-examples/anthropic-example.js",
+    "example:google": "node examples/provider-examples/google-example.js",
+    "example:local": "node examples/provider-examples/local-example.js"
   },
   "keywords": [
     "ai",
@@ -22,6 +29,7 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "dotenv": "^17.3.0"
+  }
 }
