@@ -1,0 +1,37 @@
+{
+  "name": "comanmanis-email-service",
+  "version": "1.0.0",
+  "description": "Konfigurasi email massal yang andal dengan fitur anti-spam lengkap / Reliable mass email sending configuration with comprehensive anti-spam features",
+  "main": "services/EmailService.js",
+  "scripts": {
+    "verify": "node verify-config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "email",
+    "mass-email",
+    "bulk-email",
+    "sendgrid",
+    "mailgun",
+    "aws-ses",
+    "smtp",
+    "anti-spam",
+    "email-deliverability",
+    "email-marketing"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  },
+  "optionalDependencies": {
+    "@aws-sdk/client-ses": "^3.400.0",
+    "@sendgrid/mail": "^8.1.6",
+    "form-data": "^4.0.0",
+    "mailgun.js": "^9.2.0",
+    "nodemailer": "^7.0.7"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
