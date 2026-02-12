@@ -105,6 +105,29 @@ await emailService.sendEmail({
 
 ## 🔧 Configuration Options
 
+### New Advanced Features
+
+- ✅ **Automatic Email Verification**
+  - Regex format validation
+  - MX record domain check
+  - Optional SMTP connection verification
+- ✅ **Queue Management**
+  - Queue-based batch processing
+  - Real-time status tracking via events and snapshots
+  - Queue-level retry with exponential backoff
+- ✅ **SMTP Sending Enhancements**
+  - Rate limiting
+  - Multiple SMTP support (round-robin with `SMTP_POOL_CONFIG`)
+  - HTML + Plain text email support
+- ✅ **Automation**
+  - Scheduled sending (`scheduleEmail`)
+  - Auto validation before queue/send
+  - Auto cleanup of queue history
+- ✅ **Reporting & Monitoring**
+  - Real-time status (`getRealtimeStatus`)
+  - Daily JSON reports in `logs/reports`
+  - Structured error logging to `logs/error.log`
+
 ### Email Service Providers
 
 #### SendGrid
@@ -153,6 +176,34 @@ EMAIL_RATE_LIMIT=10        # Emails per second
 EMAIL_MAX_RETRIES=3        # Maximum retry attempts
 EMAIL_RETRY_DELAY=1000     # Retry delay in milliseconds
 EMAIL_BATCH_SIZE=50        # Batch size for bulk sending
+```
+
+### Queue, Validation, Automation & Reporting
+
+```env
+EMAIL_ENABLE_QUEUE=true
+EMAIL_QUEUE_PROCESS_INTERVAL_MS=2000
+EMAIL_QUEUE_MAX_RETRIES=3
+EMAIL_QUEUE_RETRY_BASE_DELAY_MS=1000
+EMAIL_QUEUE_CLEANUP_AFTER_DAYS=7
+
+EMAIL_AUTO_VALIDATE=true
+EMAIL_VALIDATE_REGEX=true
+EMAIL_VALIDATE_MX=true
+EMAIL_VALIDATE_SMTP=false
+
+SMTP_POOL_CONFIG=[]
+
+EMAIL_AUTOMATION_ENABLED=true
+EMAIL_AUTO_PROCESS_QUEUE=true
+EMAIL_AUTO_CLEANUP=true
+EMAIL_CLEANUP_INTERVAL_MS=3600000
+EMAIL_DAILY_REPORT_HOUR=0
+EMAIL_DAILY_REPORT_MINUTE=5
+
+EMAIL_REPORTING_ENABLED=true
+EMAIL_REPORTS_DIR=logs/reports
+EMAIL_ERROR_LOG_FILE=logs/error.log
 ```
 
 ### Tracking

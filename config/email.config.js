@@ -54,6 +54,19 @@ const emailConfig = {
     }
   },
   
+  // Multiple SMTP provider support (JSON array)
+  // Example: [{"host":"smtp1.example.com","port":587,"secure":false,"user":"u1","pass":"p1"}]
+  smtpPool: (() => {
+    try {
+      if (!process.env.SMTP_POOL_CONFIG) return [];
+      const parsed = JSON.parse(process.env.SMTP_POOL_CONFIG);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      console.warn('Invalid SMTP_POOL_CONFIG JSON. Falling back to empty pool.');
+      return [];
+    }
+  })(),
+  
   // Rate limiting and retry configuration
   rateLimit: parseInt(process.env.EMAIL_RATE_LIMIT) || 10,
   maxRetries: parseInt(process.env.EMAIL_MAX_RETRIES) || 3,
@@ -64,6 +77,40 @@ const emailConfig = {
   tracking: {
     opens: process.env.EMAIL_TRACK_OPENS === 'true',
     clicks: process.env.EMAIL_TRACK_CLICKS === 'true'
+  },
+  
+  // Email verification configuration
+  verification: {
+    autoValidate: process.env.EMAIL_AUTO_VALIDATE !== 'false',
+    regexValidation: process.env.EMAIL_VALIDATE_REGEX !== 'false',
+    checkMxRecord: process.env.EMAIL_VALIDATE_MX !== 'false',
+    smtpVerification: process.env.EMAIL_VALIDATE_SMTP === 'true'
+  },
+  
+  // Queue management configuration
+  queue: {
+    enabled: process.env.EMAIL_ENABLE_QUEUE !== 'false',
+    processIntervalMs: parseInt(process.env.EMAIL_QUEUE_PROCESS_INTERVAL_MS) || 2000,
+    maxRetries: parseInt(process.env.EMAIL_QUEUE_MAX_RETRIES) || 3,
+    retryBaseDelayMs: parseInt(process.env.EMAIL_QUEUE_RETRY_BASE_DELAY_MS) || 1000,
+    cleanupAfterDays: parseInt(process.env.EMAIL_QUEUE_CLEANUP_AFTER_DAYS) || 7
+  },
+  
+  // Automation configuration
+  automation: {
+    enabled: process.env.EMAIL_AUTOMATION_ENABLED !== 'false',
+    autoProcessQueue: process.env.EMAIL_AUTO_PROCESS_QUEUE !== 'false',
+    autoCleanup: process.env.EMAIL_AUTO_CLEANUP !== 'false',
+    cleanupIntervalMs: parseInt(process.env.EMAIL_CLEANUP_INTERVAL_MS) || 3600000,
+    dailyReportHour: parseInt(process.env.EMAIL_DAILY_REPORT_HOUR) || 0,
+    dailyReportMinute: parseInt(process.env.EMAIL_DAILY_REPORT_MINUTE) || 5
+  },
+  
+  // Reporting and monitoring configuration
+  reporting: {
+    enabled: process.env.EMAIL_REPORTING_ENABLED !== 'false',
+    reportsDir: process.env.EMAIL_REPORTS_DIR || 'logs/reports',
+    errorLogFile: process.env.EMAIL_ERROR_LOG_FILE || 'logs/error.log'
   },
   
   // Reply-to configuration
