@@ -407,7 +407,7 @@ async function performanceComparison() {
  */
 async function main() {
   console.log('Local Agent Provider Examples');
-  console.log('=' .repeat(60));
+  console.log('='.repeat(60));
   console.log();
   
   console.log('NOTE: These examples require a local agent server to be running.');

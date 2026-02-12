@@ -376,7 +376,7 @@ async function dataExtraction() {
  */
 async function main() {
   console.log('Google AI (Gemini) Provider Examples');
-  console.log('=' .repeat(60));
+  console.log('='.repeat(60));
   console.log();
   
   // Check if API key is configured

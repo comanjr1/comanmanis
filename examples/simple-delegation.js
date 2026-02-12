@@ -193,7 +193,7 @@ async function errorHandling() {
  */
 async function main() {
   console.log('CloudAgentService - Simple Delegation Examples');
-  console.log('=' .repeat(50));
+  console.log('='.repeat(50));
   console.log();
   
   // Run examples one by one

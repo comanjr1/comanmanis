@@ -350,7 +350,7 @@ async function streamingResponse() {
  */
 async function main() {
   console.log('OpenAI Provider Examples');
-  console.log('=' .repeat(60));
+  console.log('='.repeat(60));
   console.log();
   
   // Check if API key is configured

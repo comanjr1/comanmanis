@@ -316,7 +316,7 @@ async function withProgressTracking() {
  */
 async function main() {
   console.log('CloudAgentService - Batch Delegation Examples');
-  console.log('=' .repeat(60));
+  console.log('='.repeat(60));
   console.log();
   
   // Run examples
