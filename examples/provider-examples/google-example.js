@@ -397,7 +397,7 @@ async function main() {
   
   console.log('\n\n' + '='.repeat(60));
   console.log('All Google AI examples completed!');
-  console.log('=' .repeat(60));
+  console.log('='.repeat(60));
 }
 
 // Run if executed directly

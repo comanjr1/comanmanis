@@ -205,7 +205,7 @@ async function main() {
   
   console.log('\n\n' + '='.repeat(50));
   console.log('All examples completed!');
-  console.log('=' .repeat(50));
+  console.log('='.repeat(50));
 }
 
 // Run if executed directly
