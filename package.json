@@ -1,0 +1,35 @@
+{
+  "name": "cloud-agent-service",
+  "version": "1.0.0",
+  "description": "Production-ready cloud agent service for delegating tasks to AI providers",
+  "main": "services/CloudAgentService.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "verify": "node verify-config.js",
+    "example": "node examples/usage.js",
+    "example:simple": "node examples/simple-delegation.js",
+    "example:batch": "node examples/batch-delegation.js",
+    "example:openai": "node examples/provider-examples/openai-example.js",
+    "example:anthropic": "node examples/provider-examples/anthropic-example.js",
+    "example:google": "node examples/provider-examples/google-example.js",
+    "example:local": "node examples/provider-examples/local-example.js"
+  },
+  "keywords": [
+    "ai",
+    "cloud",
+    "agents",
+    "openai",
+    "anthropic",
+    "google-ai",
+    "automation",
+    "task-delegation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.0"
+  }
+}
