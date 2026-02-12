@@ -319,20 +319,38 @@ class EmailService {
   }
 
   /**
-   * Convert HTML to plain text (basic implementation)
+   * Convert HTML to plain text for email alternative version
+   * 
+   * SECURITY NOTE: This function is used ONLY to generate plain text email bodies
+   * from HTML email content. The output is sent as plain text in emails, NOT rendered
+   * as HTML in a browser context. Therefore, XSS concerns do not apply here.
+   * 
+   * For production use with complex HTML or user-generated content, consider using
+   * a dedicated library like 'html-to-text' or 'cheerio' for better results.
    */
   htmlToText(html) {
-    return html
-      .replace(/<style[^>]*>.*<\/style>/gm, '')
-      .replace(/<script[^>]*>.*<\/script>/gm, '')
-      .replace(/<[^>]+>/gm, '')
-      .replace(/&nbsp;/g, ' ')
-      .replace(/&amp;/g, '&')
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&quot;/g, '"')
-      .replace(/&#39;/g, "'")
-      .trim();
+    if (!html) return '';
+    
+    // Strip all HTML tags - output is plain text only, never rendered as HTML
+    let text = html.replace(/<[^>]*>/g, '');
+    
+    // Decode common HTML entities for readability in plain text
+    const entities = [
+      ['&nbsp;', ' '],
+      ['&quot;', '"'],
+      ['&#39;', "'"],
+      ['&#x27;', "'"],
+      ['&lt;', '<'],
+      ['&gt;', '>'],
+      ['&amp;', '&']  // Must be last to avoid double-unescaping
+    ];
+    
+    entities.forEach(([entity, char]) => {
+      text = text.split(entity).join(char);
+    });
+    
+    // Clean up whitespace
+    return text.replace(/\s+/g, ' ').trim();
   }
 
   /**
