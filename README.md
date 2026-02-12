@@ -28,6 +28,15 @@ Complete email configuration system for reliable mass email sending that ensures
 
 ## 🚀 Quick Start
 
+### 0. Test Run (No Configuration Required)
+
+```bash
+npm install  # Install dependencies
+npm start    # Run demo to verify installation
+```
+
+This will verify that all components are installed and working correctly without requiring email credentials.
+
 ### 1. Install Dependencies
 
 ```bash

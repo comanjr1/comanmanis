@@ -2,6 +2,17 @@
 
 ## English Version
 
+### 0. Quick Demo (Optional)
+
+After cloning, you can immediately test that everything is working:
+
+```bash
+npm install  # Install dependencies
+npm start    # Run demo to verify installation
+```
+
+This runs a demo without requiring email credentials, verifying all components are installed correctly.
+
 ### 1. Prerequisites
 - Node.js >= 14.0.0 installed
 - An email service provider account (choose one):
@@ -101,6 +112,17 @@ node examples/send-single-email.js
 ---
 
 ## Versi Bahasa Indonesia
+
+### 0. Demo Cepat (Opsional)
+
+Setelah clone, Anda bisa langsung test bahwa semuanya berfungsi:
+
+```bash
+npm install  # Install dependencies
+npm start    # Jalankan demo untuk verifikasi instalasi
+```
+
+Ini menjalankan demo tanpa memerlukan kredensial email, memverifikasi semua komponen terinstall dengan benar.
 
 ### 1. Prasyarat
 - Node.js >= 14.0.0 terinstall
