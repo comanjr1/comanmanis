@@ -340,6 +340,15 @@ See `examples/usage.js` for comprehensive usage examples:
 node examples/usage.js
 ```
 
+## Documentation
+
+Comprehensive guides are available in the `docs/` directory:
+
+- **[Quick Start Guide](./docs/QUICKSTART.md)**: Get up and running quickly with step-by-step setup instructions and common use cases
+- **[API Reference](./docs/API.md)**: Complete API documentation with detailed method descriptions and examples
+- **[Architecture Guide](./docs/ARCHITECTURE.md)**: System design, data flow, and architectural patterns
+- **[Implementation Guide](./docs/IMPLEMENTATION.md)**: Deep dive into implementation details, design decisions, and best practices
+
 ## Security
 
 - API keys are loaded from environment variables
