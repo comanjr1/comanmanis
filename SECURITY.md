@@ -61,11 +61,23 @@ The documentation has been updated to mention this option.
 
 ### Vulnerabilities in Dependencies
 
-No vulnerabilities were found in the direct dependencies. Some vulnerabilities exist in optional dependencies, but these are:
-- **Optional dependencies** only (not required for core functionality)
-- **Dev dependencies** of those optional packages
-- **Low severity** issues
-- Not exploitable in this use case (email sending service)
+**All known vulnerabilities have been fixed!** ✅
+
+#### Previous Vulnerabilities (Now Fixed)
+1. **Nodemailer < 7.0.7** - Email to unintended domain vulnerability
+   - **Status**: ✅ Fixed - Updated to 7.0.13
+   - **Fix Date**: 2026-02-12
+   
+2. **@sendgrid/mail < 8.1.6** - Axios CSRF, SSRF, and DoS vulnerabilities
+   - **Status**: ✅ Fixed - Updated to 8.1.6
+   - **Fix Date**: 2026-02-12
+
+#### Current Status
+- **npm audit**: 0 vulnerabilities found
+- **Direct Dependencies**: No vulnerabilities
+- **Optional Dependencies**: All updated to secure versions
+  - nodemailer: 7.0.13 (patched version: 7.0.7)
+  - @sendgrid/mail: 8.1.6 (patched version: 8.1.6)
 
 ### Additional Security Measures Implemented
 
